@@ -22,7 +22,9 @@ app.use(helmet());//aggiunge un ulteriore layer di sicurezza alle nostre app in 
 app.use(favicon(path.join(__dirname, 'public/immagini' ,'stip.ico')))
 
 //Middleweare express.static: per restituire al client file statici
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public', 'pagine')));
+app.use(express.static(path.join(__dirname, 'public', 'immagini')));
 
 //Middleweare che gestisce l’errore nel caso che nessuna route vada a buon fine
 app.use("*",function (req,res,next){
